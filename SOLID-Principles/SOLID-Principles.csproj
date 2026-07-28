@@ -17,8 +17,6 @@
     <Folder Include="LiskovSubstitution\Violate\" />
     <Folder Include="OpenClosed\Apply\" />
     <Folder Include="OpenClosed\Violate\" />
-    <Folder Include="SingleResponsibility\Apply\" />
-    <Folder Include="SingleResponsibility\Violate\" />
   </ItemGroup>
 
 </Project>
