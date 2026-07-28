@@ -35,11 +35,15 @@ namespace SOLID_Principles
 
             #region Single Responsibility 
 
-            TaskOfSingleResponsibility();
+          //  TaskOfSingleResponsibility();
 
             #endregion
 
+            #region Open Closed
 
+
+
+            #endregion
 
         }
     }

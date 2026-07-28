@@ -15,8 +15,6 @@
     <Folder Include="InterfaceSeggrigation\Violate\" />
     <Folder Include="LiskovSubstitution\Apply\" />
     <Folder Include="LiskovSubstitution\Violate\" />
-    <Folder Include="OpenClosed\Apply\" />
-    <Folder Include="OpenClosed\Violate\" />
   </ItemGroup>
 
 </Project>
