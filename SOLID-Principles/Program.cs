@@ -2,6 +2,7 @@
 using SOLID_Principles.LiskovSubstitution.Apply;
 using SOLID_Principles.LiskovSubstitution.Apply.Ex_2_Interface;
 using SOLID_Principles.LiskovSubstitution.Violate.Ex_1_Inheritance;
+using SOLID_Principles.SemiFinalTask;
 using SOLID_Principles.SingleResponsibility.Task;
 
 namespace SOLID_Principles
@@ -63,6 +64,26 @@ namespace SOLID_Principles
             bike.TurnOnEngine();
             Console.WriteLine("///////////////////");
         }
+
+        static void SemiFinalTask()
+        {            
+
+            PayPal payPal = new PayPal();
+            payPal.ProcessPayment(100.0);
+            payPal.Logging(payPal, 100.0);
+            payPal.SendReceipt(payPal);
+
+
+            CreditCard creditCard = new CreditCard();
+            creditCard.ProcessPayment(200.9);
+            creditCard.Logging(creditCard, 200.9);
+            creditCard.SendReceipt(creditCard);
+
+            Crypto crypto = new Crypto();
+            crypto.ProcessPayment(400.0);
+            crypto.Logging(crypto, 400.0);
+            crypto.SendReceipt(crypto);
+        }
         static void Main(string[] args)
         {
 
@@ -80,19 +101,25 @@ namespace SOLID_Principles
 
             #region LiskovSubstitution
 
-            LiskovSubstitution();
+          //  LiskovSubstitution();
 
             #endregion
 
             #region LiskovSubstitution Apply
 
-            LiskovSubstitutionApply();
+          //  LiskovSubstitutionApply();
 
             IBike motorBike = new MotorBike();
-            LiskovSubstitutionApplyStartBike(motorBike);
+           // LiskovSubstitutionApplyStartBike(motorBike);
 
             IBike bicycle = new Bicycle();
-            LiskovSubstitutionApplyStartBike(bicycle);
+           // LiskovSubstitutionApplyStartBike(bicycle);
+
+            #endregion
+
+            #region MyRegion
+
+            SemiFinalTask();
 
             #endregion
 
