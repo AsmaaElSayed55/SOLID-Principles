@@ -6,6 +6,5 @@
             // Save the invoice to a database
             Console.WriteLine($"Invoice for {invoice.Book.Name} saved to database.");
         }
-    {
     }
 }

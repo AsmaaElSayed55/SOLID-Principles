@@ -1,4 +1,8 @@
-﻿using SOLID_Principles.SingleResponsibility.Task;
+﻿
+using SOLID_Principles.LiskovSubstitution.Apply;
+using SOLID_Principles.LiskovSubstitution.Apply.Ex_2_Interface;
+using SOLID_Principles.LiskovSubstitution.Violate.Ex_1_Inheritance;
+using SOLID_Principles.SingleResponsibility.Task;
 
 namespace SOLID_Principles
 {
@@ -30,18 +34,65 @@ namespace SOLID_Principles
 
         }
 
+        static void LiskovSubstitution()
+        {
+            SOLID_Principles.LiskovSubstitution.Violate.Ex_1_Inheritance.Rectangle square = new SOLID_Principles.LiskovSubstitution.Violate.Ex_1_Inheritance.Square(); // reference of base(parent) class pointing to derived(child) class
+
+            square.Width = 5;
+            square.Height = 10;
+
+            Console.WriteLine(square.GetArea()); // Expected: 50, Actual: 100
+
+            square.Width = 5;
+
+            Console.WriteLine(square.GetArea()); // expected: 50, Actual: 25
+        }
+
+        static void LiskovSubstitutionApply()
+        {
+            Shape rect = new SOLID_Principles.LiskovSubstitution.Apply.Rectangle { Width = 5, Height = 10 };
+
+            Shape square = new SOLID_Principles.LiskovSubstitution.Apply.Square { Side = 7 };
+
+            Console.WriteLine(rect.GetArea());
+            Console.WriteLine(square.GetArea());
+        }
+        static void LiskovSubstitutionApplyStartBike(IBike bike)
+        {
+            bike.Speed();
+            bike.TurnOnEngine();
+            Console.WriteLine("///////////////////");
+        }
         static void Main(string[] args)
         {
 
             #region Single Responsibility 
 
-          //  TaskOfSingleResponsibility();
+            //  TaskOfSingleResponsibility();
 
             #endregion
 
             #region Open Closed
 
 
+
+            #endregion
+
+            #region LiskovSubstitution
+
+            LiskovSubstitution();
+
+            #endregion
+
+            #region LiskovSubstitution Apply
+
+            LiskovSubstitutionApply();
+
+            IBike motorBike = new MotorBike();
+            LiskovSubstitutionApplyStartBike(motorBike);
+
+            IBike bicycle = new Bicycle();
+            LiskovSubstitutionApplyStartBike(bicycle);
 
             #endregion
 

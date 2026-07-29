@@ -13,8 +13,6 @@
     <Folder Include="DependancyInversion\Violate\" />
     <Folder Include="InterfaceSeggrigation\Apply\" />
     <Folder Include="InterfaceSeggrigation\Violate\" />
-    <Folder Include="LiskovSubstitution\Apply\" />
-    <Folder Include="LiskovSubstitution\Violate\" />
   </ItemGroup>
 
 </Project>
