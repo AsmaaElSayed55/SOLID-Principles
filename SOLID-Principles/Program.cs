@@ -84,7 +84,12 @@ namespace SOLID_Principles
             crypto.Logging(crypto, 400.0);
             crypto.SendReceipt(crypto);
         }
-        static void Main(string[] args)
+
+        static void InterfaceSeggrigation()
+        {
+            
+        }
+            static void Main(string[] args)
         {
 
             #region Single Responsibility 
@@ -113,13 +118,17 @@ namespace SOLID_Principles
            // LiskovSubstitutionApplyStartBike(motorBike);
 
             IBike bicycle = new Bicycle();
-           // LiskovSubstitutionApplyStartBike(bicycle);
+            // LiskovSubstitutionApplyStartBike(bicycle);
 
             #endregion
 
-            #region MyRegion
+            #region Semi Final Task
 
-            SemiFinalTask();
+            //  SemiFinalTask();
+
+            #endregion
+
+            #region InterfaceSeggrigation
 
             #endregion
 

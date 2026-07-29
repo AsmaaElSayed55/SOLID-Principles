@@ -11,8 +11,6 @@
   <ItemGroup>
     <Folder Include="DependancyInversion\Apply\" />
     <Folder Include="DependancyInversion\Violate\" />
-    <Folder Include="InterfaceSeggrigation\Apply\" />
-    <Folder Include="InterfaceSeggrigation\Violate\" />
   </ItemGroup>
 
 </Project>
