@@ -8,12 +8,12 @@ namespace SOLID_Principles.SingleResponsibility.Violate
 {
     internal class Invoice
     {
-        public Book Book { get; set; }
+        public Emailer Book { get; set; }
         public int Quantity { get; set; }
         public decimal DiscountRate{ get; set; }
         public decimal TaxRate { get; set; }
         public decimal Total { get; set; }
-        public Invoice(Book book, int quantity, decimal discountRate, decimal taxRate) {
+        public Invoice(Emailer book, int quantity, decimal discountRate, decimal taxRate) {
             Book = book;
             Quantity = quantity;
             DiscountRate = discountRate;

@@ -1,4 +1,6 @@
 ﻿
+using SOLID_Principles.DependancyInversion.Apply;
+using SOLID_Principles.InterfaceSeggrigation.Apply;
 using SOLID_Principles.LiskovSubstitution.Apply;
 using SOLID_Principles.LiskovSubstitution.Apply.Ex_2_Interface;
 using SOLID_Principles.LiskovSubstitution.Violate.Ex_1_Inheritance;
@@ -87,9 +89,28 @@ namespace SOLID_Principles
 
         static void InterfaceSeggrigation()
         {
-            
+            Car car = new Car();
+            car.StartEngine();
+            car.StopEngine();
+
+            Airplane airplane = new Airplane();
+            airplane.StartEngine();
+            airplane.StopEngine();
+            airplane.Fly();
+
+
         }
-            static void Main(string[] args)
+
+        static void DependancyInversion()
+        {
+            WeatherTracker weatherTracker = new WeatherTracker(new Emailer()); // passing any object that implements INotifier interface
+            weatherTracker.SetCurrentConditions("Hot");
+
+            WeatherTracker weatherTracker2 = new WeatherTracker(new SMS()); // passing any object that implements INotifier interface
+            weatherTracker2.SetCurrentConditions("Hot");
+
+        }
+        static void Main(string[] args)
         {
 
             #region Single Responsibility 
@@ -129,6 +150,13 @@ namespace SOLID_Principles
             #endregion
 
             #region InterfaceSeggrigation
+
+            #endregion
+
+
+            #region DependancyInversion
+
+            DependancyInversion();
 
             #endregion
 
