@@ -1,11 +1,13 @@
 ﻿
 using SOLID_Principles.DependancyInversion.Apply;
+using SOLID_Principles.FinalTask;
 using SOLID_Principles.InterfaceSeggrigation.Apply;
 using SOLID_Principles.LiskovSubstitution.Apply;
 using SOLID_Principles.LiskovSubstitution.Apply.Ex_2_Interface;
 using SOLID_Principles.LiskovSubstitution.Violate.Ex_1_Inheritance;
 using SOLID_Principles.SemiFinalTask;
 using SOLID_Principles.SingleResponsibility.Task;
+using System.Reflection;
 
 namespace SOLID_Principles
 {
@@ -31,7 +33,7 @@ namespace SOLID_Principles
             Console.WriteLine($"The Salary is {Salary}");
 
             // Save the employee's salary to the database
-            SavingToDatabase saveEmployee = new SavingToDatabase(employee);
+            SingleResponsibility.Task.SavingToDatabase saveEmployee = new SingleResponsibility.Task.SavingToDatabase(employee);
             saveEmployee.SaveToDatabase();
 
 
@@ -110,6 +112,43 @@ namespace SOLID_Principles
             weatherTracker2.SetCurrentConditions("Hot");
 
         }
+
+        static void FinalTask()
+        {
+            IPaymentMethod paymentMethod = new CreditCardPayment();
+            paymentMethod.Pay(233.98);
+
+            paymentMethod = new CryptoPayment();
+            paymentMethod.Pay(32642.3);
+
+            paymentMethod = new PayPalPayment();
+            paymentMethod.Pay(247824.98);
+
+
+            // New Payment Method is Visa Payment
+
+            paymentMethod = new VisaPayment();
+            paymentMethod.Pay(4628752);
+
+
+            FinalTask.INotifier notifier = new FinalTask.EmailNotifier("asmaa@gmail.com");
+            notifier.Notify("Email Meesage");
+
+            notifier = new SmsNotifier();
+            notifier.Notify("SMS Meesage");
+
+            notifier = new WhatsAppNotifier("0107467284628");
+            notifier.Notify("WhatsApp Meesage");
+
+            Order order = new Order()
+            {
+                Id = 2425,
+                Amount = 0, // Non Parametrize Constructor Call OrderValidator Constructor class that check by default 
+                CustomerEmail = "vgsaw@gmail.com",
+                PaymentType = new PayPalPayment()
+            };
+
+        }
         static void Main(string[] args)
         {
 
@@ -156,9 +195,12 @@ namespace SOLID_Principles
 
             #region DependancyInversion
 
-            DependancyInversion();
+            //  DependancyInversion();
 
             #endregion
+
+
+            FinalTask();
 
         }
     }
